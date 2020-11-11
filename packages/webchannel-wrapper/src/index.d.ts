@@ -28,6 +28,7 @@ export namespace WebChannel {
     CLOSE: string;
     ERROR: string;
     MESSAGE: string;
+    STAT_EVENT: string;
   };
 }
 

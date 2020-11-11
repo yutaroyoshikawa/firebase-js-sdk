@@ -33,6 +33,7 @@ import {
   withTestDocAndInitialData
 } from '../util/helpers';
 import { DEFAULT_SETTINGS, DEFAULT_PROJECT_ID } from '../util/settings';
+import { setLogLevel } from '@firebase/logger';
 
 use(chaiAsPromised);
 
@@ -1593,9 +1594,12 @@ apiDescribe('Database', (persistence: boolean) => {
     });
   });
 
-  it('can set and get data with auto detect long polling enabled', () => {
+  it.only('can set and get data with auto detect long polling enabled', () => {
+    setLogLevel('debug');
+
     const settings = {
       ...DEFAULT_SETTINGS,
+      // experimentalForceLongPolling: true
       experimentalAutoDetectLongPolling: true
     };
 

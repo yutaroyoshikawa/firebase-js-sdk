@@ -57,6 +57,8 @@ goog.net.WebChannel.EventType['CLOSE'] = goog.net.WebChannel.EventType.CLOSE;
 goog.net.WebChannel.EventType['ERROR'] = goog.net.WebChannel.EventType.ERROR;
 goog.net.WebChannel.EventType['MESSAGE'] =
   goog.net.WebChannel.EventType.MESSAGE;
+goog.net.WebChannel.EventType['STAT_EVENT'] =
+  goog.net.WebChannel.EventType.STAT_EVENT;
 goog.events.EventTarget.prototype['listen'] =
   goog.events.EventTarget.prototype.listen;
 

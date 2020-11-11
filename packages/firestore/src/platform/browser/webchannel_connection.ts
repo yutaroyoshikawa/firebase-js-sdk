@@ -348,6 +348,18 @@ export class WebChannelConnection extends RestConnection {
       }
     );
 
+    interface WebChannelStats {
+      stat: Number;
+    }
+
+    unguardedEventListen<WebChannelStats>(
+      WebChannel.EventType.STAT_EVENT,
+      evt => {
+        logDebug(LOG_TAG, JSON.stringify(evt, null, 3));
+        logDebug(LOG_TAG, 'FFFFFF WebChannel connection type is', evt!.stat);
+      }
+    );
+
     setTimeout(() => {
       // Technically we could/should wait for the WebChannel opened event,
       // but because we want to send the first message with the WebChannel
